@@ -1,6 +1,6 @@
 /* ==========================================================================
    TouristHub - Created By Raza
-   Modern CSS Design System, Wi-Fi Badges & Reviews Styling
+   Modern CSS Design System & Reviews Styling
    ========================================================================== */
 
 :root {
@@ -416,25 +416,6 @@ body {
   font-weight: 600;
 }
 
-.wifi-badge {
-  position: absolute;
-  top: 0.8rem;
-  left: 0.8rem;
-  background: rgba(7, 10, 18, 0.82);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  color: var(--accent-cyan);
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-full);
-  font-size: 0.72rem;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  z-index: 2;
-}
-
 .fav-btn {
   position: absolute;
   top: 0.8rem;
@@ -573,7 +554,7 @@ body {
   text-decoration: none;
 }
 
-/* Modal Overlay & Wi-Fi Details */
+/* Modal Overlay */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -693,32 +674,6 @@ body {
   font-size: 0.78rem;
   padding: 0.3rem 0.65rem;
   border-radius: var(--radius-sm);
-}
-
-/* Wi-Fi Info Box inside Modal */
-.wifi-modal-box {
-  background: var(--bg-input);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  padding: 0.85rem;
-  border-radius: var(--radius-md);
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.wifi-modal-title {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--accent-cyan);
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.wifi-modal-text {
-  font-size: 0.8rem;
-  color: var(--text-muted);
 }
 
 /* User Reviews Section */

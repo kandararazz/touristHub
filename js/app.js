@@ -1,6 +1,6 @@
 /**
  * TouristHub - Created By Raza
- * Main Application Logic, 500+ Attractions, Wi-Fi Indicators & Reviews
+ * Main Application Logic, 500+ Attractions & Interactive Reviews
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -165,16 +165,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const isFav = favorites.includes(item.id);
       const totalReviewsCount = (item.userReviews ? item.userReviews.length : 0);
       const fallbackImg = categoryFallbackImages[item.category] || categoryFallbackImages["Modern Architecture"];
-      const wifiLabel = item.wifiQuality || "📶 Free Wi-Fi";
 
       return `
         <article class="card" data-id="${item.id}">
           <div class="card-media">
             <img src="${item.imageUrl}" alt="${item.name}" class="card-img" loading="lazy" onError="this.onerror=null;this.src='${fallbackImg}';" />
             
-            <span class="wifi-badge">
-              ${wifiLabel}
-            </span>
+            <div class="card-top-badges">
+              <span class="card-badge">${item.tag}</span>
+            </div>
 
             <button class="fav-btn ${isFav ? 'active' : ''}" data-id="${item.id}" title="${isFav ? 'Remove from favorites' : 'Add to favorites'}">
               <i class="${isFav ? 'ri-heart-3-fill' : 'ri-heart-3-line'}"></i>
@@ -233,16 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modalAddress.innerHTML = `<i class="ri-map-pin-2-line"></i> ${attraction.address}`;
     modalDescription.textContent = attraction.description;
     
-    // Wi-Fi Info Display in Modal
-    const wifiQuality = attraction.wifiQuality || "📶 Free Wi-Fi";
-    const wifiDetails = attraction.wifiDetails || "Public guest Wi-Fi network available for visitors.";
-    
-    modalHighlights.innerHTML = `
-      <div class="wifi-modal-box" style="width: 100%;">
-        <div class="wifi-modal-title"><i class="ri-wifi-line"></i> Wi-Fi Connectivity: ${wifiQuality}</div>
-        <div class="wifi-modal-text">${wifiDetails}</div>
-      </div>
-    ` + attraction.highlights.map(h => `
+    modalHighlights.innerHTML = attraction.highlights.map(h => `
       <span class="highlight-chip"><i class="ri-checkbox-circle-line"></i> ${h}</span>
     `).join('');
 
@@ -276,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
       modalMarker.bindPopup(`
         <div style="text-align:center; padding: 4px;">
           <strong style="color:#fff; font-size:1rem;">${attraction.name}</strong><br>
-          <span style="color:#38bdf8; font-size:0.8rem;">★ ${attraction.rating} • ${wifiQuality}</span>
+          <span style="color:#38bdf8; font-size:0.8rem;">★ ${attraction.rating} • ${attraction.entryFee}</span>
         </div>
       `).openPopup();
     }, 200);
@@ -417,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .bindPopup(`
           <div style="padding: 4px; max-width: 200px;">
             <strong style="color:#fff; font-size: 0.95rem;">${item.name}</strong>
-            <p style="font-size: 0.75rem; color:#9ca3af; margin: 4px 0;">${item.emirate} • ${item.wifiQuality || 'Free Wi-Fi'}</p>
+            <p style="font-size: 0.75rem; color:#9ca3af; margin: 4px 0;">${item.emirate} • ${item.entryFee}</p>
             <button onclick="document.dispatchEvent(new CustomEvent('open-modal-event', {detail: '${item.id}'}))" style="background:#38bdf8; color:#fff; border:none; padding:4px 8px; border-radius:4px; font-size:0.75rem; cursor:pointer; width:100%;">View Details</button>
           </div>
         `);
@@ -444,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.ai-chip-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        const query = e.target.textContent.replace(/^[✨🔥🌙🎟️📍🛜]\s*/, '');
+        const query = e.target.textContent.replace(/^[✨🔥🌙🎟️📍]\s*/, '');
         aiInput.value = query;
         handleUserAISubmit();
       });
@@ -476,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
         html += `
           <button onclick="document.dispatchEvent(new CustomEvent('open-modal-event', {detail: '${place.id}'}))" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 0.4rem 0.65rem; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; text-align: left; display: flex; justify-content: space-between; align-items: center;">
             <span>📍 ${place.name} (${place.emirate})</span>
-            <span style="color: #fbbf24;">${place.wifiQuality || 'Wi-Fi'}</span>
+            <span style="color: #fbbf24;">${place.entryFee}</span>
           </button>
         `;
       });
@@ -492,10 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let matched = [];
     let replyText = "";
 
-    if (q.includes("wifi") || q.includes("wi-fi") || q.includes("internet")) {
-      matched = attractions.filter(a => a.wifiQuality && a.wifiQuality.includes("High-Speed")).slice(0, 4);
-      replyText = "Here are top spots in the UAE featuring ⚡ High-Speed Free Public Wi-Fi:";
-    } else if (q.includes("3 hour") || q.includes("afternoon") || q.includes("quick")) {
+    if (q.includes("3 hour") || q.includes("afternoon") || q.includes("quick")) {
       matched = attractions.slice(0, 3);
       replyText = "Here are 3 excellent spots perfect for a 2-3 hour afternoon visit:";
     } else if (q.includes("free") || q.includes("cheap") || q.includes("budget")) {
