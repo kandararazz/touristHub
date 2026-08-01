@@ -1,0 +1,204 @@
+[
+  {
+    "id": "burj-khalifa",
+    "name": "Burj Khalifa",
+    "emirate": "Dubai",
+    "category": "Modern Architecture",
+    "tag": "Iconic Landmark",
+    "entryFee": "From 179 AED",
+    "mustGo": true,
+    "timeOfDay": "Both",
+    "rating": 4.9,
+    "reviews": "165,400 reviews",
+    "description": "Standing at an astounding 828 meters, the Burj Khalifa is the world's tallest building and the ultimate symbol of modern engineering. Visitors can enjoy panoramic 360-degree views of Dubai's futuristic skyline and desert horizon from its world-famous observation decks.",
+    "latitude": 25.1972,
+    "longitude": 55.2744,
+    "address": "1 Sheikh Mohammed bin Rashid Blvd, Downtown Dubai, Dubai, UAE",
+    "imageUrl": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Burj+Khalifa+Dubai",
+    "highlights": ["At The Top 148th Floor", "World's Tallest Tower", "Dubai Fountain View"],
+    "bestTime": "Sunset & Evening",
+    "userReviews": [
+      {
+        "author": "Sarah M.",
+        "rating": 5,
+        "date": "2026-07-28",
+        "comment": "Unbelievable sunset view from level 148! Booking in advance is a must. Outstanding experience."
+      },
+      {
+        "author": "Ahmed K.",
+        "rating": 5,
+        "date": "2026-07-15",
+        "comment": "The fountain show from above is breathtaking. A true wonder of modern engineering!"
+      }
+    ]
+  },
+  {
+    "id": "sheikh-zayed-mosque",
+    "name": "Sheikh Zayed Grand Mosque",
+    "emirate": "Abu Dhabi",
+    "category": "Historical Site",
+    "tag": "Cultural Heritage",
+    "entryFee": "Free Entry",
+    "mustGo": true,
+    "timeOfDay": "Both",
+    "rating": 4.9,
+    "reviews": "98,200 reviews",
+    "description": "This architectural masterpiece features 82 white marble domes, gold-leaf chandeliers, and the world's largest hand-knotted carpet. It offers a profound cultural experience welcoming visitors from around the world to marvel at Islamic design and serene reflective pools.",
+    "latitude": 24.4128,
+    "longitude": 54.4750,
+    "address": "Sheikh Rashid Bin Saeed Street, Abu Dhabi, UAE",
+    "imageUrl": "https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Sheikh+Zayed+Grand+Mosque+Abu+Dhabi",
+    "highlights": ["World's Largest Hand-knotted Carpet", "82 Marble Domes", "Illuminated Reflective Pools"],
+    "bestTime": "Late Afternoon to Dusk",
+    "userReviews": [
+      {
+        "author": "Elena R.",
+        "rating": 5,
+        "date": "2026-07-20",
+        "comment": "Serene, peaceful, and majestic. The marble work and blue lighting at dusk are unmatched."
+      }
+    ]
+  },
+  {
+    "id": "museum-of-the-future",
+    "name": "Museum of the Future",
+    "emirate": "Dubai",
+    "category": "Museum & Art",
+    "tag": "Futuristic Tech",
+    "entryFee": "149 AED",
+    "mustGo": true,
+    "timeOfDay": "Day",
+    "rating": 4.8,
+    "reviews": "45,800 reviews",
+    "description": "Engineered as an architectural marvel engraved with Arabic calligraphy, this museum transports visitors 50 years into the future. Through immersive storytelling, virtual reality, and interactive exhibits, it showcases groundbreaking innovations in space, wellness, and climate science.",
+    "latitude": 25.2192,
+    "longitude": 55.2818,
+    "address": "Sheikh Zayed Rd, Trade Centre 2, Dubai, UAE",
+    "imageUrl": "https://images.unsplash.com/photo-1650390192534-118fa30026db?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Museum+of+the+Future+Dubai",
+    "highlights": ["Torus Calligraphy Façade", "OSSO Amazonia Simulation", "Future Voyage Exhibit"],
+    "bestTime": "Morning & Early Afternoon",
+    "userReviews": [
+      {
+        "author": "David L.",
+        "rating": 5,
+        "date": "2026-07-10",
+        "comment": "Super interactive exhibit! The Amazon simulation and flying penguins were highlights for the kids."
+      }
+    ]
+  },
+  {
+    "id": "louvre-abu-dhabi",
+    "name": "Louvre Abu Dhabi",
+    "emirate": "Abu Dhabi",
+    "category": "Museum & Art",
+    "tag": "Art & Architecture",
+    "entryFee": "63 AED",
+    "mustGo": true,
+    "timeOfDay": "Day",
+    "rating": 4.8,
+    "reviews": "32,100 reviews",
+    "description": "Designed by Jean Nouvel, this premier art museum appears to float on the Arabian Gulf under a magnificent 'rain of light' geometric dome. It bridges Eastern and Western art, displaying centuries of historical artifacts alongside world-renowned international masterpieces.",
+    "latitude": 24.5336,
+    "longitude": 54.3983,
+    "address": "Saadiyat Cultural District, Abu Dhabi, UAE",
+    "imageUrl": "https://images.unsplash.com/photo-1618255016518-e79435b67272?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Louvre+Abu+Dhabi",
+    "highlights": ["Floating Rain of Light Dome", "Saadiyat Cultural Center", "Global Masterpiece Gallery"],
+    "bestTime": "Mid-day & Sunset",
+    "userReviews": [
+      {
+        "author": "Marcus V.",
+        "rating": 5,
+        "date": "2026-06-30",
+        "comment": "The architecture alone is worth the ticket. Sunbeams filtering through the dome are magical."
+      }
+    ]
+  },
+  {
+    "id": "global-village",
+    "name": "Global Village Dubai",
+    "emirate": "Dubai",
+    "category": "Culture & Entertainment",
+    "tag": "Cultural Market",
+    "entryFee": "25 AED",
+    "mustGo": true,
+    "timeOfDay": "Night",
+    "rating": 4.8,
+    "reviews": "112,000 reviews",
+    "description": "Global Village is a spectacular multicultural festival park featuring over 90 country pavilions, street food bazaars, carnival rides, and nightly fireworks. It offers an incredible world journey filled with international performances and authentic artisanal crafts.",
+    "latitude": 25.0683,
+    "longitude": 55.3075,
+    "address": "Sheikh Mohamed Bin Zayed Road, Dubai, UAE",
+    "imageUrl": "https://images.unsplash.com/photo-1578895210405-907db48a7812?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Global+Village+Dubai",
+    "highlights": ["90+ Country Pavilions", "International Street Food", "Stunt Show & Fireworks"],
+    "bestTime": "Evening & Night",
+    "userReviews": [
+      {
+        "author": "Fatima A.",
+        "rating": 5,
+        "date": "2026-07-22",
+        "comment": "Best value entertainment in Dubai! Tried street food from 6 different countries in one night."
+      }
+    ]
+  },
+  {
+    "id": "jebel-jais",
+    "name": "Jebel Jais Mountain",
+    "emirate": "Ras Al Khaimah",
+    "category": "Nature & Outdoors",
+    "tag": "Adventure Peak",
+    "entryFee": "Free Entry (Zipline Extra)",
+    "mustGo": false,
+    "timeOfDay": "Day",
+    "rating": 4.7,
+    "reviews": "24,600 reviews",
+    "description": "Soaring over 1,900 meters above sea level, Jebel Jais is the highest peak in the United Arab Emirates offering dramatic mountain vistas and cool breezes. Thrill-seekers can ride the world's longest zipline or hike along scenic ridge trails with sweeping views of the Hajar mountains.",
+    "latitude": 25.9525,
+    "longitude": 56.1417,
+    "address": "Jebel Jais Mountain Road, Ras Al Khaimah, UAE",
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Jebel+Jais+Ras+Al+Khaimah",
+    "highlights": ["World's Longest Zipline", "Jais Sledder Ride", "1,934m Observation Deck"],
+    "bestTime": "Early Morning & Sunrise",
+    "userReviews": [
+      {
+        "author": "Chris B.",
+        "rating": 5,
+        "date": "2026-06-18",
+        "comment": "The zipline was an adrenaline rush of a lifetime! Crisp mountain air and spectacular views."
+      }
+    ]
+  },
+  {
+    "id": "dubai-frame",
+    "name": "Dubai Frame",
+    "emirate": "Dubai",
+    "category": "Modern Architecture",
+    "tag": "Panoramic View",
+    "entryFee": "50 AED",
+    "mustGo": true,
+    "timeOfDay": "Both",
+    "rating": 4.6,
+    "reviews": "51,300 reviews",
+    "description": "Standing 150 meters high in Zabeel Park, the golden Dubai Frame bridges the gap between old and new Dubai. Walking across its transparent glass skywalk presents breathtaking views of historic Deira on one side and towering Downtown skyscrapers on the other.",
+    "latitude": 25.2354,
+    "longitude": 55.3003,
+    "address": "Zabeel Park Gate 4, Dubai, UAE",
+    "imageUrl": "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dubai+Frame",
+    "highlights": ["150m Glass Skywalk", "Old & New Dubai Panorama", "Gold-Clad Exterior"],
+    "bestTime": "Late Afternoon & Dusk",
+    "userReviews": [
+      {
+        "author": "Omar T.",
+        "rating": 4,
+        "date": "2026-07-04",
+        "comment": "Walking on the glass floor is thrilling. Great contrast between historic and futuristic Dubai."
+      }
+    ]
+  }
+]
