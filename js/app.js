@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let activeSort = 'rating';
   let searchQuery = '';
   let activeView = 'grid';
-  let activeTimeOfDay = 'All';
-  let mustGoOnly = false;
   let activeAttractionForReview = null;
   let selectedReviewRating = 5;
 
@@ -35,11 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const viewGridBtn = document.getElementById('view-grid-btn');
   const viewMapBtn = document.getElementById('view-map-btn');
   const fullMapSection = document.getElementById('full-map-section');
-
-  const modeAllBtn = document.getElementById('mode-all');
-  const modeDayBtn = document.getElementById('mode-day');
-  const modeNightBtn = document.getElementById('mode-night');
-  const modeMustGoBtn = document.getElementById('mode-mustgo');
 
   const modalOverlay = document.getElementById('map-modal');
   const modalCloseBtn = document.getElementById('modal-close');
@@ -68,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       attractions = await response.json();
       
-      // Merge stored custom user reviews
       attractions.forEach(item => {
         if (customReviews[item.id]) {
           item.userReviews = [...(item.userReviews || []), ...customReviews[item.id]];
@@ -123,10 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const matchesCategory = activeCategory === 'All' || item.category === activeCategory;
       const matchesEmirate = activeEmirate === 'All' || item.emirate === activeEmirate;
-      const matchesTimeOfDay = activeTimeOfDay === 'All' || item.timeOfDay === 'Both' || item.timeOfDay === activeTimeOfDay;
-      const matchesMustGo = !mustGoOnly || item.mustGo === true;
 
-      return matchesSearch && matchesCategory && matchesEmirate && matchesTimeOfDay && matchesMustGo;
+      return matchesSearch && matchesCategory && matchesEmirate;
     });
 
     filteredAttractions.sort((a, b) => {
@@ -171,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             <div class="card-top-badges">
               <span class="card-badge">${item.tag}</span>
-              ${item.mustGo ? '<span class="card-badge must-go-badge"><i class="ri-fire-fill"></i> MUST GO</span>' : ''}
             </div>
 
             <button class="fav-btn ${isFav ? 'active' : ''}" data-id="${item.id}" title="${isFav ? 'Remove from favorites' : 'Add to favorites'}">
@@ -327,14 +316,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       activeAttractionForReview.userReviews.unshift(newReview);
 
-      // Save to localStorage
       if (!customReviews[activeAttractionForReview.id]) {
         customReviews[activeAttractionForReview.id] = [];
       }
       customReviews[activeAttractionForReview.id].unshift(newReview);
       localStorage.setItem('touristhub_custom_reviews', JSON.stringify(customReviews));
 
-      // Reset Form & Re-render
       reviewCommentInput.value = '';
       reviewNameInput.value = '';
       renderModalReviews(activeAttractionForReview);
@@ -371,18 +358,11 @@ document.addEventListener('DOMContentLoaded', () => {
     activeCategory = 'All';
     activeEmirate = 'All';
     activeSort = 'rating';
-    activeTimeOfDay = 'All';
-    mustGoOnly = false;
 
     searchInput.value = '';
     emirateSelect.value = 'All';
     sortSelect.value = 'rating';
     clearSearchBtn.style.display = 'none';
-
-    modeAllBtn.classList.add('active');
-    modeDayBtn.classList.remove('active');
-    modeNightBtn.classList.remove('active');
-    modeMustGoBtn.classList.remove('active');
 
     renderCategoryPills();
     applyFilters();
@@ -442,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.ai-chip-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        const query = e.target.textContent.replace(/^[✨🔥🌙🎟️]\s*/, '');
+        const query = e.target.textContent.replace(/^[✨🔥🌙🎟️📍]\s*/, '');
         aiInput.value = query;
         handleUserAISubmit();
       });
@@ -491,23 +471,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let replyText = "";
 
     if (q.includes("3 hour") || q.includes("afternoon") || q.includes("quick")) {
-      matched = attractions.filter(a => a.timeOfDay === "Day" || a.timeOfDay === "Both").slice(0, 3);
+      matched = attractions.slice(0, 3);
       replyText = "Here are 3 excellent spots perfect for a 2-3 hour afternoon visit:";
     } else if (q.includes("free") || q.includes("cheap") || q.includes("budget")) {
       matched = attractions.filter(a => a.entryFee.toLowerCase().includes("free"));
       replyText = "Here are top places with Free Entry across the UAE:";
-    } else if (q.includes("night") || q.includes("evening") || q.includes("light")) {
-      matched = attractions.filter(a => a.timeOfDay === "Night" || a.timeOfDay === "Both").slice(0, 4);
-      replyText = "Here are breathtaking places to visit during dusk and nighttime:";
     } else if (q.includes("abu dhabi")) {
       matched = attractions.filter(a => a.emirate === "Abu Dhabi");
       replyText = "Top recommended attractions in Abu Dhabi:";
     } else if (q.includes("dubai")) {
       matched = attractions.filter(a => a.emirate === "Dubai").slice(0, 4);
       replyText = "Iconic highlights you must see in Dubai:";
-    } else if (q.includes("must go") || q.includes("top") || q.includes("best")) {
-      matched = attractions.filter(a => a.mustGo);
-      replyText = "These are unmissable, world-record 'Must Go' destinations:";
     } else {
       matched = attractions.filter(a => 
         a.name.toLowerCase().includes(q) || 
@@ -516,8 +490,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ).slice(0, 3);
 
       if (matched.length === 0) {
-        matched = attractions.filter(a => a.mustGo).slice(0, 3);
-        replyText = "I couldn't find an exact match, but I highly recommend these top UAE attractions:";
+        matched = attractions.slice(0, 3);
+        replyText = "I highly recommend these top UAE attractions:";
       } else {
         replyText = `Based on your request "${q}", here are my top picks:`;
       }
@@ -527,39 +501,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function setupEventListeners() {
-    modeAllBtn.addEventListener('click', () => {
-      activeTimeOfDay = 'All';
-      mustGoOnly = false;
-      setActiveModeBtn(modeAllBtn);
-      applyFilters();
-    });
-
-    modeDayBtn.addEventListener('click', () => {
-      activeTimeOfDay = 'Day';
-      mustGoOnly = false;
-      setActiveModeBtn(modeDayBtn);
-      applyFilters();
-    });
-
-    modeNightBtn.addEventListener('click', () => {
-      activeTimeOfDay = 'Night';
-      mustGoOnly = false;
-      setActiveModeBtn(modeNightBtn);
-      applyFilters();
-    });
-
-    modeMustGoBtn.addEventListener('click', () => {
-      mustGoOnly = true;
-      activeTimeOfDay = 'All';
-      setActiveModeBtn(modeMustGoBtn);
-      applyFilters();
-    });
-
-    function setActiveModeBtn(activeBtn) {
-      [modeAllBtn, modeDayBtn, modeNightBtn, modeMustGoBtn].forEach(b => b.classList.remove('active'));
-      activeBtn.classList.add('active');
-    }
-
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.trim().toLowerCase();
       clearSearchBtn.style.display = searchQuery ? 'block' : 'none';

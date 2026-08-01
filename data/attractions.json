@@ -6,8 +6,6 @@
     "category": "Modern Architecture",
     "tag": "Iconic Landmark",
     "entryFee": "From 179 AED",
-    "mustGo": true,
-    "timeOfDay": "Both",
     "rating": 4.9,
     "reviews": "165,400 reviews",
     "description": "Standing at an astounding 828 meters, the Burj Khalifa is the world's tallest building and the ultimate symbol of modern engineering. Visitors can enjoy panoramic 360-degree views of Dubai's futuristic skyline and desert horizon from its world-famous observation decks.",
@@ -40,8 +38,6 @@
     "category": "Historical Site",
     "tag": "Cultural Heritage",
     "entryFee": "Free Entry",
-    "mustGo": true,
-    "timeOfDay": "Both",
     "rating": 4.9,
     "reviews": "98,200 reviews",
     "description": "This architectural masterpiece features 82 white marble domes, gold-leaf chandeliers, and the world's largest hand-knotted carpet. It offers a profound cultural experience welcoming visitors from around the world to marvel at Islamic design and serene reflective pools.",
@@ -68,8 +64,6 @@
     "category": "Museum & Art",
     "tag": "Futuristic Tech",
     "entryFee": "149 AED",
-    "mustGo": true,
-    "timeOfDay": "Day",
     "rating": 4.8,
     "reviews": "45,800 reviews",
     "description": "Engineered as an architectural marvel engraved with Arabic calligraphy, this museum transports visitors 50 years into the future. Through immersive storytelling, virtual reality, and interactive exhibits, it showcases groundbreaking innovations in space, wellness, and climate science.",
@@ -96,8 +90,6 @@
     "category": "Museum & Art",
     "tag": "Art & Architecture",
     "entryFee": "63 AED",
-    "mustGo": true,
-    "timeOfDay": "Day",
     "rating": 4.8,
     "reviews": "32,100 reviews",
     "description": "Designed by Jean Nouvel, this premier art museum appears to float on the Arabian Gulf under a magnificent 'rain of light' geometric dome. It bridges Eastern and Western art, displaying centuries of historical artifacts alongside world-renowned international masterpieces.",
@@ -124,8 +116,6 @@
     "category": "Culture & Entertainment",
     "tag": "Cultural Market",
     "entryFee": "25 AED",
-    "mustGo": true,
-    "timeOfDay": "Night",
     "rating": 4.8,
     "reviews": "112,000 reviews",
     "description": "Global Village is a spectacular multicultural festival park featuring over 90 country pavilions, street food bazaars, carnival rides, and nightly fireworks. It offers an incredible world journey filled with international performances and authentic artisanal crafts.",
@@ -152,8 +142,6 @@
     "category": "Nature & Outdoors",
     "tag": "Adventure Peak",
     "entryFee": "Free Entry (Zipline Extra)",
-    "mustGo": false,
-    "timeOfDay": "Day",
     "rating": 4.7,
     "reviews": "24,600 reviews",
     "description": "Soaring over 1,900 meters above sea level, Jebel Jais is the highest peak in the United Arab Emirates offering dramatic mountain vistas and cool breezes. Thrill-seekers can ride the world's longest zipline or hike along scenic ridge trails with sweeping views of the Hajar mountains.",
@@ -180,8 +168,6 @@
     "category": "Modern Architecture",
     "tag": "Panoramic View",
     "entryFee": "50 AED",
-    "mustGo": true,
-    "timeOfDay": "Both",
     "rating": 4.6,
     "reviews": "51,300 reviews",
     "description": "Standing 150 meters high in Zabeel Park, the golden Dubai Frame bridges the gap between old and new Dubai. Walking across its transparent glass skywalk presents breathtaking views of historic Deira on one side and towering Downtown skyscrapers on the other.",
@@ -198,6 +184,110 @@
         "rating": 4,
         "date": "2026-07-04",
         "comment": "Walking on the glass floor is thrilling. Great contrast between historic and futuristic Dubai."
+      }
+    ]
+  },
+  {
+    "id": "al-fahidi",
+    "name": "Al Fahidi Historical Neighborhood",
+    "emirate": "Dubai",
+    "category": "Historical Site",
+    "tag": "Traditional Culture",
+    "entryFee": "Free Entry",
+    "rating": 4.6,
+    "reviews": "28,700 reviews",
+    "description": "Stepping into Al Fahidi offers an enchanting glimpse into mid-19th century Dubai with traditional wind-tower architecture and narrow winding alleyways. Explore art galleries, courtyard cafes, and spice souks right along historic Dubai Creek.",
+    "latitude": 25.2636,
+    "longitude": 55.3003,
+    "address": "Al Fahidi St, Bur Dubai, Dubai, UAE",
+    "imageUrl": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Al+Fahidi+Historical+Neighbourhood+Dubai",
+    "highlights": ["Traditional Wind Towers", "Dubai Creek Abra Rides", "Coffee Museum"],
+    "bestTime": "Morning or Sunset",
+    "userReviews": [
+      {
+        "author": "Lina M.",
+        "rating": 5,
+        "date": "2026-07-12",
+        "comment": "Beautiful historical district. Loved riding the traditional Abra boat across the creek!"
+      }
+    ]
+  },
+  {
+    "id": "dubai-miracle-garden",
+    "name": "Dubai Miracle Garden",
+    "emirate": "Dubai",
+    "category": "Nature & Outdoors",
+    "tag": "Floral Park",
+    "entryFee": "95 AED",
+    "rating": 4.7,
+    "reviews": "64,200 reviews",
+    "description": "Home to over 150 million blooming flowers arranged into sensational 3D sculptures, including a full-sized Emirates A380 airplane clad in floral petals. It is the world's largest natural flower garden, creating a vibrant paradise in the heart of the desert.",
+    "latitude": 25.0601,
+    "longitude": 55.2444,
+    "address": "Al Barsha South 3, Dubai, UAE",
+    "imageUrl": "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dubai+Miracle+Garden",
+    "highlights": ["Floral Emirates A380", "150 Million Blooming Flowers", "Smurfs Village"],
+    "bestTime": "Morning & Daytime",
+    "userReviews": [
+      {
+        "author": "Jessica P.",
+        "rating": 5,
+        "date": "2026-06-25",
+        "comment": "Mind-blowing flower displays! The floral Emirates A380 plane is unbelievable in real life."
+      }
+    ]
+  },
+  {
+    "id": "hatta-wadi-hub",
+    "name": "Hatta Wadi Hub",
+    "emirate": "Dubai",
+    "category": "Nature & Outdoors",
+    "tag": "Mountain Oasis",
+    "entryFee": "Free Entry (Activities Extra)",
+    "rating": 4.7,
+    "reviews": "18,400 reviews",
+    "description": "Nestled in the majestic Hajar mountains, Hatta is Dubai's outdoor adventure haven for kayaking on turquoise dam waters and mountain biking. Visitors can enjoy glamping, hiking trails, and heritage village tours amidst breathtaking natural landscapes.",
+    "latitude": 24.8188,
+    "longitude": 56.1264,
+    "address": "Hatta Mountain Area, Dubai, UAE",
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Hatta+Wadi+Hub+Dubai",
+    "highlights": ["Turquoise Dam Kayaking", "Mountain Biking Trails", "Hatta Sign Trail"],
+    "bestTime": "Morning & Afternoon",
+    "userReviews": [
+      {
+        "author": "Tariq S.",
+        "rating": 5,
+        "date": "2026-07-08",
+        "comment": "Kayaking on the Hatta dam surrounded by mountains is the best escape from the city!"
+      }
+    ]
+  },
+  {
+    "id": "sharjah-art-museum",
+    "name": "Sharjah Art Museum",
+    "emirate": "Sharjah",
+    "category": "Museum & Art",
+    "tag": "Culture & Heritage",
+    "entryFee": "Free Entry",
+    "rating": 4.6,
+    "reviews": "9,300 reviews",
+    "description": "One of the largest art venues in the Gulf region hosting an extensive permanent collection of modern Arab art and regional masterpieces. Located in Sharjah's Heritage Area, it features temporary international exhibitions and interactive art workshops.",
+    "latitude": 25.3582,
+    "longitude": 55.3857,
+    "address": "Al Shuwaihean, Heritage Area, Sharjah, UAE",
+    "imageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Sharjah+Art+Museum",
+    "highlights": ["Permanent Modern Arab Art", "Sharjah Heritage Heart", "Art Education Wing"],
+    "bestTime": "Daytime",
+    "userReviews": [
+      {
+        "author": "Nadia K.",
+        "rating": 5,
+        "date": "2026-07-19",
+        "comment": "A gem for art lovers. Quiet galleries with incredible contemporary and classical Arab art."
       }
     ]
   }
